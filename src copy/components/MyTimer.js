@@ -1,8 +1,6 @@
 import { useTimer } from "react-timer-hook";
-import { useQuiz } from "../contexts/QuizContext";
 
-function MyTimer({ expiryTimestamp }) {
-  const { dispatch } = useQuiz();
+function MyTimer({ expiryTimestamp, dispatch }) {
   const { seconds, minutes } = useTimer({
     expiryTimestamp,
     onExpire: () => dispatch({ type: "finished" }),
